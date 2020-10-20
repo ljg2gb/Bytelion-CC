@@ -1,14 +1,12 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-
-import Home from './src/pages/Home'
+import { StyleSheet, View } from 'react-native';
+import Index from './src/routes/Index'
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Home/>
-      <Text>Bytelion reviews app loading...</Text>
+      <Index/>
       <StatusBar style="auto" />
     </View>
   );
