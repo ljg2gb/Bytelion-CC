@@ -24,7 +24,6 @@ export default function Home() {
 
 const styles = StyleSheet.create({
     page: {
-        padding: 20,
         flex: 1,
         alignItems: 'center',
         backgroundColor: '#F2F6FA',
