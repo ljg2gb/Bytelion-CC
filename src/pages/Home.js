@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Text, View } from 'react-native';
-import { TouchableHighlight } from 'react-native-gesture-handler';
+import { Text, View, StyleSheet } from 'react-native';
 
 import Reviews from '../components/Reviews'
 const url = 'https://my-json-server.typicode.com/bytelion/expo_test_mock_api/reviews'
@@ -12,15 +11,22 @@ export default function Home() {
         fetch(url)
             .then(response => response.json())
             .then(result => setReviews(result))
-            // .then(console.log(reviews))
     }
 
     useEffect(() => {displayReviews()}, [])
 
     return(
-        <View>
-            <Text>Home Page</Text>
+        <View style={styles.page}>
             <Reviews reviews={reviews}/>
         </View>
     )
 }
+
+const styles = StyleSheet.create({
+    page: {
+        padding: 20,
+        flex: 1,
+        alignItems: 'center',
+        backgroundColor: '#F2F6FA',
+    }
+})
