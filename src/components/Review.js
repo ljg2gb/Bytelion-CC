@@ -1,9 +1,12 @@
 import React from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 
+import Vote from '../components/Vote'
+
 export default function Review({rating, message, created_at}) {
     return(
         <View style={styles.card} >
+            <Vote/>
             <Text style={styles.rating}>{rating} out of 5 stars</Text>
             <Text style={styles.message} >{message}</Text>
             <Text style={styles.date}>{created_at}</Text>
