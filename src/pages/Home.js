@@ -12,19 +12,15 @@ export default function Home() {
         fetch(url)
             .then(response => response.json())
             .then(result => setReviews(result))
-            .then(console.log(reviews))
+            // .then(console.log(reviews))
     }
+
+    useEffect(() => {displayReviews()}, [])
 
     return(
         <View>
             <Text>Home Page</Text>
-            <TouchableHighlight 
-                underlayColor='rgb(210,220,230)' 
-                onPress={displayReviews}
-            >
-                    <Text>button</Text>
-            </TouchableHighlight>
-            <Reviews/>
+            <Reviews reviews={reviews}/>
         </View>
     )
 }
