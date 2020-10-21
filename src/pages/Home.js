@@ -26,6 +26,6 @@ const styles = StyleSheet.create({
     page: {
         flex: 1,
         alignItems: 'center',
-        backgroundColor: '#F2F6FA',
+        backgroundColor: 'black',
     }
 })

@@ -23,7 +23,7 @@ export default function ReplyForm({ resetReplyButton, setReply }) {
 
 const styles = StyleSheet.create({
     component: {
-        backgroundColor: '#1544A3',
+        backgroundColor: '#0A3010',
         padding: 15,
     },
     input: {

@@ -13,7 +13,7 @@ export default function Reviews({reviews}) {
     return(
         <View>
             <ScrollView>
-                <Text style={styles.h2}>Reviews</Text>
+                <Text style={styles.h2}>👏 Reviews App</Text>
                 {displayReviews()}
             </ScrollView>
         </View>
@@ -22,8 +22,10 @@ export default function Reviews({reviews}) {
 
 const styles = StyleSheet.create({
     h2: {
+        color: 'white',
         fontSize: 40,
         textAlign: "center",
-        paddingVertical: 20,
+        paddingTop: 40,
+        paddingVertical: 10,
     }
 })

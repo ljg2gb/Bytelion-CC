@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
     },
     message: {
         fontSize: 18,
-        marginVertical: 30,
+        marginTop: 30,
         paddingVertical: 10,
         paddingHorizontal: 5,
         color: 'white',
@@ -76,15 +76,16 @@ const styles = StyleSheet.create({
     },
     reply: {
         padding: 5,
-        backgroundColor: 'white'
     },
     replybutton: {
         fontSize: 16,
-        color: '#1C57CC'
+        color: '#0A3010'
     },
     replytext: {
-        backgroundColor: '#1544A3',
+        backgroundColor: '#0A3010',
         padding: 15,
         fontSize: 14,
+        color: 'white',
+        fontSize: 18,
     }
 })
