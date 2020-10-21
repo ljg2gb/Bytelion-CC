@@ -1,18 +1,46 @@
-import React from 'react';
+import React, { useState, useEffect}  from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { TouchableHighlight } from 'react-native-gesture-handler';
 
 import Vote from '../components/Vote'
-import ReplyButton from '../components/replyButton'
+import ReplyForm from '../components/replyForm'
 
 export default function Review({rating, message, created_at}) {
+    const [replyform, resetReplyButton] = useState(false);
+    const [reply, setReply] = useState('');
+
+
+    const clicked = () => {
+        resetReplyButton(!replyform)
+    }
+
+    const displayReplyForm = () => {
+        if(replyform) {
+            return <ReplyForm resetReplyButton={resetReplyButton} setReply={setReply} />
+        }
+    }
+
+    const displayReply = () => {
+        if(reply) {
+            return <Text style={styles.replytext}>{reply}</Text>
+        }
+    }
+
     return(
         <View style={styles.card} >
             <Vote/>
             <Text style={styles.rating}>{rating} out of 5 stars</Text>
             <Text style={styles.message} >{message}</Text>
-            <ReplyButton/>
             <Text style={styles.date}>{created_at}</Text>
+            <TouchableHighlight
+                underlayColor='#407C3A'
+                onPress={() => clicked()}
+                style={styles.reply}
+            >
+                <Text style={styles.replybutton}>Reply</Text>
+            </TouchableHighlight>
+            {displayReply()}
+            {displayReplyForm()}
         </View>
     )
 }
@@ -22,7 +50,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#4C9646',
         minHeight: 130,
         margin: 10,
-        padding: 5,
+        padding: 10,
         borderRadius: 5,
         shadowColor: 'black',
         shadowOffset: { width: 0, height: 2, },
@@ -32,7 +60,7 @@ const styles = StyleSheet.create({
     },
     message: {
         fontSize: 18,
-        marginVertical: 40,
+        marginVertical: 30,
         paddingVertical: 10,
         paddingHorizontal: 5,
         color: 'white',
@@ -44,21 +72,19 @@ const styles = StyleSheet.create({
         color: 'white'
     },
     date: {
-        position: "absolute",
-        right: 10,
-        bottom: 10,
-        color: 'black',
+        padding: 5,
     },
     reply: {
-        // color: 'navy',
-        // fontSize: 14,
+        padding: 5,
+        backgroundColor: 'white'
     },
-    button: {
-        backgroundColor: 'black',
-        position: "absolute",
-        left: 10,
-        bottom: 5,
+    replybutton: {
+        fontSize: 16,
+        color: '#1C57CC'
+    },
+    replytext: {
+        backgroundColor: '#1544A3',
+        padding: 15,
+        fontSize: 14,
     }
-
-
 })
