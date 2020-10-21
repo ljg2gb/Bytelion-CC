@@ -3,14 +3,13 @@ import { View, Text, StyleSheet} from 'react-native';
 import { TouchableHighlight } from 'react-native-gesture-handler';
 
 export default function Vote() {
-
     const clicked = (arrow) => {
         if (arrow === 'up') {
             console.log('upvote')
         } else {
             console.log('downvote')
         }
-    }
+    };
 
     return(
         <View style={styles.component}>
@@ -29,8 +28,8 @@ export default function Vote() {
                 <Text style={styles.arrow}>⬇</Text>
             </TouchableHighlight>
         </View>
-    )
-}
+    );
+};
 
 const styles = StyleSheet.create({
     component: {
@@ -47,4 +46,4 @@ const styles = StyleSheet.create({
         padding: 2.5,
         fontSize: 20,
     }
-})
+});

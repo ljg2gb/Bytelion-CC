@@ -1,30 +1,28 @@
-import React, { useState, useEffect}  from 'react';
+import React, { useState }  from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { TouchableHighlight } from 'react-native-gesture-handler';
+import Vote from '../components/Vote';
+import ReplyForm from '../components/replyForm';
 
-import Vote from '../components/Vote'
-import ReplyForm from '../components/replyForm'
-
-export default function Review({rating, message, created_at}) {
+export default function Review({ rating, message, created_at }) {
     const [replyform, resetReplyButton] = useState(false);
     const [reply, setReply] = useState('');
 
-
     const clicked = () => {
         resetReplyButton(!replyform)
-    }
+    };
 
     const displayReplyForm = () => {
         if(replyform) {
             return <ReplyForm resetReplyButton={resetReplyButton} setReply={setReply} />
         }
-    }
+    };
 
     const displayReply = () => {
         if(reply) {
             return <Text style={styles.replytext}>{reply}</Text>
         }
-    }
+    };
 
     return(
         <View style={styles.card} >
@@ -42,8 +40,8 @@ export default function Review({rating, message, created_at}) {
             {displayReply()}
             {displayReplyForm()}
         </View>
-    )
-}
+    );
+};
 
 const styles = StyleSheet.create({
     card: {
@@ -88,4 +86,4 @@ const styles = StyleSheet.create({
         color: 'white',
         fontSize: 18,
     }
-})
+});

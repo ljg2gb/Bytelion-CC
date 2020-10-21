@@ -9,17 +9,24 @@ export default function ReplyForm({ resetReplyButton, setReply }) {
         setReply(message);
         setMessage('');
         resetReplyButton(false);
-    }
+    };
 
     return(
         <View style={styles.component}>
-            <TextInput style={styles.input} placeholder="message" onChangeText={(text) => {setMessage(text)}}/>
-            <TouchableHighlight onPress={() => submitReply(message)} underlayColor='rgb(210,220,230)'>
+            <TextInput 
+                style={styles.input} 
+                placeholder="message" 
+                onChangeText={(text) => {setMessage(text)}}
+            />
+            <TouchableHighlight 
+                onPress={() => submitReply(message)} 
+                underlayColor='rgb(210,220,230)'
+            >
                 <Text style={styles.button}>Reply</Text>
             </TouchableHighlight>
         </View>
-    )
-}
+    );
+};
 
 const styles = StyleSheet.create({
     component: {
@@ -48,4 +55,4 @@ const styles = StyleSheet.create({
         shadowRadius: 3.84,
         elevation: 5
     },
-})
+});

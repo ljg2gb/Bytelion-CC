@@ -1,9 +1,9 @@
 import React from 'react';
 import { Text, StyleSheet, View } from 'react-native';
 import { TouchableHighlight } from 'react-native-gesture-handler';
-import Header from '../components/header'
+import Header from '../components/header';
 
-export default function Login({navigation}) {
+export default function Login({ navigation }) {
     const navigateToHome = () => {
         navigation.navigate('Home')
     }
@@ -14,7 +14,7 @@ export default function Login({navigation}) {
             <TouchableHighlight
                 onPress={navigateToHome}
                 style={styles.button}
-                >
+            >
                 <Text style={styles.buttontext}>Login</Text>
             </TouchableHighlight>
         </View>
