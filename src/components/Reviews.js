@@ -3,6 +3,7 @@ import { View, Text, StyleSheet } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 
 import Review from '../components/Review'
+import Header from '../components/header'
 
 export default function Reviews({reviews}) {
     const displayReviews = () => {
@@ -13,19 +14,9 @@ export default function Reviews({reviews}) {
     return(
         <View>
             <ScrollView>
-                <Text style={styles.h2}>👏 Reviews App</Text>
+                <Header/>
                 {displayReviews()}
             </ScrollView>
         </View>
     )
 }
-
-const styles = StyleSheet.create({
-    h2: {
-        color: 'white',
-        fontSize: 40,
-        textAlign: "center",
-        paddingTop: 40,
-        paddingVertical: 10,
-    }
-})

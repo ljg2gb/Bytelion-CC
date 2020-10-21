@@ -5,7 +5,7 @@ import Index from './src/routes/Index'
 
 export default function App() {
   return (
-    <View style={styles.container}>
+    <View style={styles.view}>
       <Index/>
       <StatusBar style="auto" />
     </View>
@@ -13,10 +13,7 @@ export default function App() {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+  view: {
+    flex: 1
+  }
+})

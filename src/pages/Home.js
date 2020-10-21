@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Text, View, StyleSheet } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 
 import Reviews from '../components/Reviews'
 const url = 'https://my-json-server.typicode.com/bytelion/expo_test_mock_api/reviews'
@@ -27,5 +27,6 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         backgroundColor: 'black',
-    }
+        width: '100%',
+    },
 })
